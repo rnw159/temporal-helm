@@ -1,3 +1,16 @@
+# Install For Hack Week
+
+```bash
+# With Teleport
+helm install \
+    --set server.replicaCount=1 \
+    --set cassandra.config.cluster_size=1 \
+    --set prometheus.enabled=false \
+    --set grafana.enabled=false \
+    --set elasticsearch.enabled=false \
+    temporal . --timeout 15m --kube-context=teleport.discord.tools-discord-anti-abuse-prd-cluster-1 --namespace=temporal --create-namespace
+```
+
 # Temporal Helm Chart
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftemporalio%2Ftemporal-helm-charts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftemporalio%2Ftemporal-helm-charts?ref=badge_shield)
 
