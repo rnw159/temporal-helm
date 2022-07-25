@@ -1,14 +1,19 @@
-# Install For Hack Week
+# Commands For Hack Week
 
 ```bash
-# With Teleport
+# Install With Teleport
 helm install \
-    --set server.replicaCount=1 \
-    --set cassandra.config.cluster_size=1 \
-    --set prometheus.enabled=false \
-    --set grafana.enabled=false \
-    --set elasticsearch.enabled=false \
-    temporal . --timeout 15m --kube-context=teleport.discord.tools-discord-anti-abuse-prd-cluster-1 --namespace=temporal --create-namespace
+--set server.replicaCount=1 \
+--set cassandra.config.cluster_size=1 \
+--set prometheus.enabled=false \
+--set grafana.enabled=false \
+--set elasticsearch.enabled=false \
+temporal . --timeout 15m \
+--kube-context=teleport.discord.tools-discord-anti-abuse-prd-cluster-1 \
+--namespace=temporal --create-namespace
+    
+# Uninstall With Teleport
+helm uninstall temporal --kube-context=teleport.discord.tools-discord-anti-abuse-prd-cluster-1 --namespace=temporal
 ```
 
 # Temporal Helm Chart
